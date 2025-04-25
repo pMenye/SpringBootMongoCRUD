@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  crud-spring-mongo:
+    image: crud-spring-mongo
+    container_name: crud-spring-mongo
+    environment:
+      spring.data.mongodb.host: mongo
+      spring.data.mongodb.news.host: mongo
+      spring.data.mongodb.port: 27017
+      spring.data.mongodb.database: crud-springdb
+      spring.data.mongodb.username: root
+      spring.data.mongodb.password: example
+    ports:
+      - 8092:5000
+    links:
+      - mongo
+    networks:
+      crud-spring-mongo-network:
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    hostname: mongo
+    container_name: mongo
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      crud-spring-mongo-network:
+
+networks:
+  crud-spring-mongo-network:
+    name: crud-spring-mongo-network
+volumes:
+  db-data:
+  mongo-data:
