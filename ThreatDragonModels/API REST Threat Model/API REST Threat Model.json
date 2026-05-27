@@ -3,7 +3,7 @@
   "summary": {
     "title": "API REST Threat Model",
     "owner": "Philippe MENYE",
-    "description": "Identification and remediation of potential vulnerabilities when users gain access to data through an endpoint.",
+    "description": "dentification and remediation of potential vulnerabilities when users gain access to data through an endpoint.",
     "id": 0
   },
   "detail": {
@@ -20,7 +20,7 @@
         "description": "API REST STRIDE"
       }
     ],
-    "diagramTop": 1,
+    "diagramTop": 2,
     "reviewer": "Phililppe MENYE",
     "threatTop": 0
   }
