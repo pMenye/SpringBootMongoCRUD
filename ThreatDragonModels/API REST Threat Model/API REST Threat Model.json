@@ -31,13 +31,14 @@
                 "text": "Utilisateurs"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "54e9fbb7-0ad5-46e6-b461-8f918992ff8b",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Utilisateurs",
@@ -129,9 +129,47 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "4a28a415-0e71-4a3e-96b5-cab8511d3d70",
+                  "title": "Usurpation d'identité",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Un attaquant usurpe l'identité d'un utilisateur légitime en envoyant un token JWT falsifié à l'API",
+                  "mitigation": "Implémentation de signatures JWT (HMAC OU RSA) et validation coté API Gateway",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                },
+                {
+                  "id": "0517a87d-fe34-4445-ac25-a775ff9acccf",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -155,6 +193,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -238,7 +277,6 @@
               ]
             },
             "id": "49cda4a1-0254-4466-a908-a51b156a4a1d",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "API GATEWAY",
@@ -275,6 +313,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -358,7 +397,6 @@
               ]
             },
             "id": "73605ede-084f-4aaf-8d59-4a1648e0c459",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Backend",
@@ -398,6 +436,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -481,7 +520,6 @@
               ]
             },
             "id": "f16c3928-15e8-433e-9062-4c20859e3eda",
-            "zIndex": 4,
             "data": {
               "type": "tm.Store",
               "name": "Bases de données",
@@ -654,6 +692,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Phililppe MENYE",
-    "threatTop": 1
+    "threatTop": 7
   }
 }
